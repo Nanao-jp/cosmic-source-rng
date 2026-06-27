@@ -2,8 +2,8 @@ import os
 import asyncio
 from fastapi import FastAPI, Request, HTTPException, status
 from fastapi.responses import JSONResponse
-from core.engine import generate_cosmic_random
-from core.cosmic import _fetch_nasa_data
+from cosmic_source_rng.engine import generate_cosmic_random
+from cosmic_source_rng.cosmic import _fetch_nasa_data
 from dotenv import load_dotenv
 
 # .envファイルから環境変数を読み込む

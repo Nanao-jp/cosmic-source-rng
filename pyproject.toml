@@ -1,0 +1,64 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cosmic-source-rng"
+version = "0.1.0"
+description = "True random number generator using NASA solar activity data and local CPU jitter"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Nanao", email = "nanao@nanao-gws.net"}
+]
+keywords = [
+    "random",
+    "rng",
+    "entropy",
+    "nasa",
+    "cosmic",
+    "true-random",
+    "cryptography",
+    "randomness"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Games/Entertainment",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+server = [
+    "fastapi>=0.100.0",
+    "uvicorn>=0.23.0",
+    "psutil>=5.9.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "build",
+    "twine",
+]
+
+[project.urls]
+Homepage = "https://github.com/Nanao-jp/cosmic-source-rng"
+Documentation = "https://github.com/Nanao-jp/cosmic-source-rng#readme"
+Repository = "https://github.com/Nanao-jp/cosmic-source-rng"
+"Bug Tracker" = "https://github.com/Nanao-jp/cosmic-source-rng/issues"
+"RapidAPI" = "https://rapidapi.com/Nanaojp/api/cosmic-source-rng"
+
+[tool.hatch.build.targets.wheel]
+packages = ["cosmic_source_rng"]
